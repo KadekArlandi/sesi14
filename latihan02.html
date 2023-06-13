@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan jQuery 02</title>
+</head>
+<body>
+    <h3>Judul Form</h3>
+    <div class="navigasi">
+        <button type="button" class="persegi">hitung Luas Persegi</button>
+        <button type="button" class="segi3">Hitung Luas SegiTiga</button>
+    </div>
+    
+    <div id="hitungluaspersegi">
+        <form action="" methos="">
+            <div>
+                Nilai Sisi 1
+                <input type="text" class="sisi1">
+            </div>
+            <div>
+                Nilai Sisi 2
+                <input type="text" class="sisi2">
+            </div>
+            <div>
+                <button type="button" class="persegi">Hitung Luas</button>
+            </div>
+        </form>
+    </div>
+    
+    <div id="hitungluassegi3">
+        <form action="" methos="">
+            <div>
+                Nilai Alas
+                <input type="text" class="AL">
+            </div>
+            <div>
+                Nilai Tinggi
+                <input type="text" class="TG">
+            </div>
+            <div>
+                <button type="button" class="segi3">Hitung Luas</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="hasil">Hasilnya</div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+           $("#hasil").hide();
+           $("#hitungluassegi3").hide();
+           $("#hitungluaspersegi").hide();
+           let judul = "Klik Tombol";
+           $("h3").html(judul);
+           $(".persegi").click(function() {
+                $("#hitungluassegi3").hide(500);
+                $("#hitungluaspersegi").show(500);
+                judul = "Hitung Luas Persegi";
+                $("h3").html(judul);
+           });
+           $(".segi3").click(function() {
+                $("#hitungluaspersegi").hide(500);
+                $("#hitungluassegi3").show(500);
+                judul = "Hitung Luas SegiTiga";
+                $("h3").html(judul);
+           });
+        });
+    </script>
+</body>
+</html>
